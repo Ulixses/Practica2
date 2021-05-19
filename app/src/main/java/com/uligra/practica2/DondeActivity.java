@@ -9,16 +9,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends BaseActivity {
+public class DondeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_donde);
         super.onCreate(savedInstanceState);
 
 
     }
-
 
 }

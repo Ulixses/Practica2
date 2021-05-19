@@ -9,16 +9,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends BaseActivity {
+public class PS4Activity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_p_s4);
         super.onCreate(savedInstanceState);
 
-
     }
-
-
 }
