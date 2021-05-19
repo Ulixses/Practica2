@@ -14,10 +14,10 @@
         <include
             android:id="@+id/toolbar"
             layout="@layout/toolbar"/>
-        <TextView
+        <FrameLayout
+            android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World!" />
+            android:layout_height="match_parent" />
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationdrawer_view"
