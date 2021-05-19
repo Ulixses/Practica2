@@ -45,7 +45,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     @Override
     //Buton carro de la compra
     public boolean onOptionsItemSelected (MenuItem item) {
-        return utilidades.botonesToolBar(item,this);
+        switch (item.getItemId()) {
+            case R.id.action_carro:
+                Intent intent = new Intent(this, CarroActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return false;
     }
 
     @Override
