@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navigation_home"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nd_home"
+            />
+        <item
+            android:id="@+id/navigation_ofer"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nd_ofer"
+            />
+        <item
+            android:id="@+id/navigation_ps4"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nd_ps4"
+            />
+        <item
+            android:id="@+id/navigation_xbox"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nd_xbox"
+            />
+        <item
+            android:id="@+id/navigation_new"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nd_new"
+            />
+        <item
+            android:id="@+id/navigation_shop"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nd_shop"
+            />
+    </group>
+    <item android:title="@string/nd_supportTitle">
+        <menu>
+            <item
+                android:id="@+id/navigation_contact"
+                android:icon="@android:drawable/sym_action_email"
+                android:title="@string/nd_contact"
+                />
+            <item
+                android:id="@+id/navigation_where"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="@string/nd_where"
+                />
+        </menu>
+    </item>
+
+</menu>

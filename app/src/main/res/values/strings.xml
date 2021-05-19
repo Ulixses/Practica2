@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Practica2</string>
+    <string name="app_web">www.uligra.com</string>
+
+    <string name="nd_home">Home</string>
+    <string name="nd_ofer">Ofertas</string>
+    <string name="nd_ps4">PS4</string>
+    <string name="nd_xbox">XBox</string>
+    <string name="nd_new">Novedades</string>
+    <string name="nd_shop">Carro de la compra</string>
+
+    <string name="nd_where">¿Dónde estamos?</string>
+    <string name="nd_contact">Contact</string>
+
+    <string name="nd_supportTitle">Soporte</string>
 </resources>
