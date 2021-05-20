@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity {
         //relleno ps4
         cursor = db.query("GAMES",
                 new String[] {"_id", "COMPANY", "NAME", "PRICE"},
-                "COMPANY = PS5",
+                "COMPANY = 'PS5'",
                 null,
                 null, null, "DATE");
         listAdapter = new SimpleCursorAdapter(
@@ -64,7 +64,7 @@ public class MainActivity extends BaseActivity {
         ps5.setAdapter(listAdapter);
         cursor = db.query("GAMES",
                 new String[] {"_id", "COMPANY", "NAME", "PRICE"},
-                "COMPANY = XBOX",
+                "COMPANY = 'XBOX'",
                 null,
                 null, null, "DATE");
         listAdapter = new SimpleCursorAdapter(
