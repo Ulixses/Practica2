@@ -29,7 +29,7 @@ public class ReclamacionActivity extends BaseActivity {
     }
 
     public void send(View view) {
-        //TODO: No se que hacer
+        //TODO: Enviar reclamación
     }
 
     public void selectImage(View view) {

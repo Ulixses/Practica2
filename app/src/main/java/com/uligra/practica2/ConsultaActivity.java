@@ -14,7 +14,7 @@ public class ConsultaActivity extends BaseActivity {
     }
 
     public void send(View view) {
-        //TODO: No se que hacer
+        //TODO: Enviar consulta
     }
 
 }
