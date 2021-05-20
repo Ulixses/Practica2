@@ -11,35 +11,77 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/categorias">
+        android:id="@+id/categorias"
+        android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <Spinner
-                android:id="@+id/novedades"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:collapseColumns="">
+                android:id="@+id/b_novedades"
+                android:onClick="clickNovedades"
+                android:text="NOVEDADES">
 
-            </Spinner>
-            <Spinner
+            </Button>
+            <ListView
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                android:id="@+id/novedades"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ListView>
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/b_ofertas"
+                android:onClick="clickOfertas"
+                android:text="OFERTAS">
+            </Button>
+            <ListView
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
                 android:id="@+id/ofertas"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </Spinner>
-            <Spinner
+            </ListView>
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/b_ps4"
+                android:onClick="clickPs4"
+                android:text="PS5">
+            </Button>
+            <ListView
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
                 android:id="@+id/ps4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </Spinner>
-            <Spinner
+            </ListView>
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/b_xbox"
+                android:onClick="clickXbox"
+                android:text="XBOX">
+            </Button>
+            <ListView
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
                 android:id="@+id/xbox"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </Spinner>
+            </ListView>
         </LinearLayout>
 
     </ScrollView>

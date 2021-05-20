@@ -28,7 +28,19 @@ public class GameDataHelper extends SQLiteOpenHelper {
                 + "IMAGE_ID INTEGER, "
                 + "PRICE REAL,"
                 + "DATE TEXT); ");
-        Videojuegos v = new Videojuegos("TLOU2", "Juego de zombies mazo guapo", Videojuegos.Consola.PS5, 10.5, new SimpleDateFormat("10-2-2020"), 0, 1);
+        Videojuegos v = new Videojuegos("TLOU2", "Juego de zombies mazo guapo", Videojuegos.Consola.PS5, 10.5, new SimpleDateFormat("10-2-2020"), 0, R.drawable.tlou);
+        addVideogame(db,v);
+         v = new Videojuegos("UNCHARTED", "Juego de aventuras mazo guapo", Videojuegos.Consola.PS5, 20.0, new SimpleDateFormat("11-2-2020"), 1, R.drawable.uncharted);
+        addVideogame(db,v);
+         v = new Videojuegos("ASSASIN CREED", "Juego de asesinos mazo guapo", Videojuegos.Consola.XBOX, 30.0, new SimpleDateFormat("10-2-2020"), 1, R.drawable.assassin);
+        addVideogame(db,v);
+         v = new Videojuegos("FIFA", "Juego de futbol mazo guapo", Videojuegos.Consola.XBOX, 40.0, new SimpleDateFormat("10-2-2020"), 1, R.drawable.fifa);
+        addVideogame(db,v);
+         v = new Videojuegos("RACHET AND CLANT", "Juego de ardilla mazo guapo", Videojuegos.Consola.PS5, 50.0, new SimpleDateFormat("10-2-2020"), 1, R.drawable.rac);
+        addVideogame(db,v);
+         v = new Videojuegos("ULISES", "Juego de ulises mazo guapo", Videojuegos.Consola.PS5, 60.0, new SimpleDateFormat("10-2-2020"), 0, R.drawable.uluses);
+        addVideogame(db,v);
+        v = new Videojuegos("PAPA", "Juego de ulises mazo guapo", Videojuegos.Consola.PS5, 60.0, new SimpleDateFormat("9-2-2020"), 0, R.drawable.uluses);
         addVideogame(db,v);
     }
 
