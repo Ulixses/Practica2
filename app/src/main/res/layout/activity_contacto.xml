@@ -19,42 +19,28 @@
         android:textSize="40sp"
         android:typeface="serif" />
 
-    <EditText
-        android:layout_width="fill_parent"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:checkedButton="@+id/radio_button_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?colorPrimaryDark"
-        android:hint="Name"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="?colorPrimaryDark"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="?colorPrimaryDark"
-        android:hint="Phone"
-        android:inputType="phone" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="?colorPrimaryDark"
-        android:gravity="top"
-        android:hint="Your Message"
-        android:fitsSystemWindows="true"
-        android:breakStrategy="balanced"
-        android:inputType="textMultiLine"
-        android:singleLine="false"
-        android:padding="5dp" />
+        android:paddingBottom="100dp"
+        android:paddingTop="100dp">
+        <RadioButton
+            android:id="@+id/radio_consulta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Realizar una consulta"
+            android:textSize="30sp"
+            android:paddingVertical="24dp"/>
+        <RadioButton
+            android:id="@+id/radio_reclamacion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Reclamación de un pedido"
+            android:textSize="30sp"
+            android:paddingVertical="24dp"/>
+    </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
@@ -64,6 +50,7 @@
         android:elevation="4dp"
         android:paddingLeft="70dp"
         android:paddingRight="70dp"
-        android:text="Submit"
-        android:textColor="#fff" />
+        android:text="Siguiente"
+        android:textColor="#fff"
+        android:onClick="actionSiguiente"/>
 </LinearLayout>
