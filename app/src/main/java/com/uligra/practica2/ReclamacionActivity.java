@@ -19,9 +19,14 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.FileOutputStream;
 
 public class ReclamacionActivity extends BaseActivity {
 
+
+    Uri image = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +34,27 @@ public class ReclamacionActivity extends BaseActivity {
     }
 
     public void send(View view) {
-        //TODO: Enviar reclamación
+        Intent intent = new Intent(Intent.ACTION_SEND);
+
+
+
+        TextView nombre = findViewById(R.id.nombre);
+        TextView factura = findViewById(R.id.factura);
+        TextView consulta = findViewById(R.id.motivo);
+
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Consulta de:" + nombre.getText().toString() + '(' + factura.getText().toString() +')');
+        intent.putExtra(Intent.EXTRA_TEXT, consulta.getText().toString());
+        intent.putExtra(Intent.EXTRA_EMAIL, R.string.correo);
+        if(image != null){
+            intent.setType("image/*");
+            intent.putExtra(Intent.EXTRA_STREAM, image);
+        }
+        else {
+            intent.setType("text/plain");
+        }
+
+        Intent intentChooser = Intent.createChooser(intent, "Selecciona la app para enviar:");
+        startActivity(intentChooser);
     }
 
     public void selectImage(View view) {
@@ -51,7 +76,6 @@ public class ReclamacionActivity extends BaseActivity {
                         Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                         startActivityForResult(takePicture, 0);
                     }
-
 
                 } else if (options[item].equals(options[1])) {
                     Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
@@ -76,12 +100,12 @@ public class ReclamacionActivity extends BaseActivity {
                         Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
                         imageView.setImageBitmap(selectedImage);
                     }
-
                     break;
                 case 1:
                     if (resultCode == RESULT_OK && data != null) {
-                        Uri selectedImage = data.getData();
-                        String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                        image = data.getData();
+                        imageView.setImageURI(image);
+                        /*String[] filePathColumn = {MediaStore.Images.Media.DATA};
                         if (selectedImage != null) {
                             Cursor cursor = getContentResolver().query(selectedImage,
                                     filePathColumn, null, null, null);
@@ -93,8 +117,7 @@ public class ReclamacionActivity extends BaseActivity {
                                 imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
                                 cursor.close();
                             }
-                        }
-
+                        }*/
                     }
                     break;
             }

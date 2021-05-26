@@ -25,21 +25,21 @@
 
                 <TextView
                     android:id="@+id/titulo"
-                    android:textSize="30sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingHorizontal="30dp"
                     android:text="Titulo"
                     android:textAllCaps="true"
-                    android:paddingHorizontal="30dp"/>
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/descripcion"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingHorizontal="30dp"
                     android:text="Descripción"
-                    android:paddingHorizontal="30dp"/>
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <ImageView
@@ -51,6 +51,7 @@
 
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/precio"
             android:layout_width="wrap_content"
@@ -58,7 +59,7 @@
             android:layout_gravity="center|end"
             android:paddingHorizontal="30dp"
             android:text="10.99 €"
-            android:textSize="30sp"/>
+            android:textSize="30sp" />
     </LinearLayout>
 
 
@@ -66,9 +67,9 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:padding="40dp"
         android:layout_gravity="bottom|end"
-        app:srcCompat="@drawable/baseline_shopping_cart_black_48"
-        android:focusable="true" />
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="40dp"
+        app:srcCompat="@drawable/baseline_shopping_cart_black_48" />
 </FrameLayout>

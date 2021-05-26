@@ -50,9 +50,6 @@ public class DondeActivity extends BaseActivity implements OnMapReadyCallback, L
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-
-
-
         googleMap.addMarker(new MarkerOptions().position(tienda).title("Nuestra tienda"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(tienda));
         googleMap.moveCamera(CameraUpdateFactory.zoomTo(15));
@@ -63,16 +60,19 @@ public class DondeActivity extends BaseActivity implements OnMapReadyCallback, L
 
         float distancia[] = new float[3];
         Location.distanceBetween(tienda.latitude,tienda.longitude,location.getLatitude(),location.getLongitude(),distancia);
+
         txtLat.setText("Distancia a la tienda es de " + distancia[0]/1000 + " kilometros");
     }
 
     @Override
     public void onProviderDisabled(String provider) {
+
         Log.d("Latitude","disable");
     }
 
     @Override
     public void onProviderEnabled(String provider) {
+
         Log.d("Latitude","enable");
     }
 

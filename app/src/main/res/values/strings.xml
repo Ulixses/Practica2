@@ -11,6 +11,7 @@
 
     <string name="nd_where">¿Dónde estamos?</string>
     <string name="nd_contact">Contacto</string>
+    <string name="correo">contacto@uligra.com</string>
 
     <string name="nd_supportTitle">Soporte</string>
 </resources>

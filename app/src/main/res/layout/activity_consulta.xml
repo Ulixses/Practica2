@@ -20,6 +20,7 @@
         android:typeface="serif" />
 
     <EditText
+        android:id="@+id/nombre"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="?colorPrimaryDark"
@@ -27,28 +28,30 @@
         android:inputType="textPersonName" />
 
     <EditText
+        android:id="@+id/correo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="?colorPrimaryDark"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
 
     <EditText
+        android:id="@+id/consulta"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="?colorPrimaryDark"
+        android:breakStrategy="balanced"
+        android:fitsSystemWindows="true"
         android:gravity="top"
         android:hint="Consulta"
-        android:fitsSystemWindows="true"
-        android:breakStrategy="balanced"
         android:inputType="textMultiLine"
-        android:singleLine="false"
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:singleLine="false" />
 
     <Button
         android:layout_width="wrap_content"
