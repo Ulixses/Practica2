@@ -14,10 +14,10 @@ public class Videojuegos {
     public String descripcion;
     public Consola plataforma;
     public Double precio;
-    public SimpleDateFormat fecha;
+    public String fecha;
     public int oferta;
     public int img;
-    public Videojuegos(String titulo, String descripcion, Consola plataforma, Double precio, SimpleDateFormat fecha, int oferta, int img){
+    public Videojuegos(String titulo, String descripcion, Consola plataforma, Double precio, String fecha, int oferta, int img){
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.plataforma = plataforma;

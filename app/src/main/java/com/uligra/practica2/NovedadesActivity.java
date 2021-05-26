@@ -18,10 +18,10 @@ public class NovedadesActivity extends BaseActivity {
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
         Cursor cursor = db.query("GAMES",
-                new String[] {"_id", "DATE", "NAME", "PRICE"},
+                new String[] {"_id", "Cast( DATE as date ) as date_", "NAME", "PRICE"},
                 null,
                 null,
-                null, null, "DATE");
+                null, null, "date_");
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 this,
                 R.layout.spinner_item,

@@ -28,10 +28,10 @@ public class MainActivity extends BaseActivity {
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
         //relleno novedades
         Cursor cursor = db.query("GAMES",
-                new String[] {"_id", "DATE", "NAME", "PRICE"},
+                new String[] {"_id", "Cast( DATE as date ) as date_", "NAME", "PRICE"},
                 null,
                 null,
-                null, null, "DATE", "5");
+                null, null, "date_", "5");
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 this,
                 R.layout.spinner_item,
@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity {
                 new String[] {"_id", "COMPANY", "NAME", "PRICE"},
                 "COMPANY = 'PS5'",
                 null,
-                null, null, "DATE", "5");
+                null, null, "date(DATE)", "5");
         listAdapter = new SimpleCursorAdapter(
                 this,
                 R.layout.spinner_item,
