@@ -15,49 +15,41 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="25dp">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/titulo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="30dp"
-                    android:text="Titulo"
-                    android:textAllCaps="true"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/descripcion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="30dp"
-                    android:text="Descripción"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/foto"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:srcCompat="@drawable/assassin" />
+                android:paddingHorizontal="30dp"
+                android:text="Titulo"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="30sp" />
 
-
+            <TextView
+                android:padding="10dp"
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="30dp"
+                android:text="Descripción"
+                android:textAlignment="center"
+                android:textSize="18sp" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            tools:srcCompat="@drawable/assassin" />
 
         <TextView
             android:id="@+id/precio"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|end"
-            android:paddingHorizontal="30dp"
+            android:paddingHorizontal="10dp"
             android:text="10.99 €"
             android:textSize="30sp" />
     </LinearLayout>

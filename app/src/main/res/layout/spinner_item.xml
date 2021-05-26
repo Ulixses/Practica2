@@ -3,21 +3,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/item_lay"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:onClick="clickGame">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="clip_horizontal"
+        android:textSize="22sp"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
+        android:padding="20dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:textSize="22sp"
+
         android:text="TextView"
-        android:textAlignment="textEnd" />
+        />
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.uligra.practica2;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -10,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
@@ -32,6 +34,7 @@ public class MainActivity extends BaseActivity {
                 null,
                 null,
                 null, null, "DATE", "5");
+
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 this,
                 R.layout.spinner_item,
@@ -114,5 +117,14 @@ public class MainActivity extends BaseActivity {
         }else{
             xbox.setVisibility(View.GONE);
         }
+    }
+
+    public void clickGame(View view) {
+
+        Intent intent = new Intent(this, DetalleActivity.class);
+        String name = ((TextView)view.findViewById(R.id.textView2)).getText().toString();
+
+        intent.putExtra("NAME", name);
+        startActivity(intent);
     }
 }
