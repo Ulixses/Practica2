@@ -27,7 +27,7 @@ public class GameDataHelper extends SQLiteOpenHelper {
                 + "DEAL INTEGER,"
                 + "IMAGE_ID INTEGER, "
                 + "PRICE REAL,"
-                + "DATE TEXT); ");
+                + "DATE DATE); ");
         Videojuegos v = new Videojuegos("TLOU2", "Juego de zombies mazo guapo", Videojuegos.Consola.PS5, 10.5, new SimpleDateFormat("10-2-2020"), 0, R.drawable.tlou);
         addVideogame(db,v);
          v = new Videojuegos("UNCHARTED", "Juego de aventuras mazo guapo", Videojuegos.Consola.PS5, 20.0, new SimpleDateFormat("11-2-2020"), 1, R.drawable.uncharted);
