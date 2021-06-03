@@ -118,12 +118,4 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    public void clickGame(View view) {
-
-        Intent intent = new Intent(this, DetalleActivity.class);
-        String name = ((TextView)view.findViewById(R.id.textView2)).getText().toString();
-
-        intent.putExtra("NAME", name);
-        startActivity(intent);
-    }
 }

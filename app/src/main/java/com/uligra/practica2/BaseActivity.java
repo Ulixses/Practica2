@@ -10,7 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -116,4 +118,14 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void clickGame(View view) {
+
+        Intent intent = new Intent(this, DetalleActivity.class);
+        String name = ((TextView)view.findViewById(R.id.textView2)).getText().toString();
+
+        intent.putExtra("NAME", name);
+        startActivity(intent);
+    }
+
 }

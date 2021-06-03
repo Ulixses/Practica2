@@ -19,12 +19,14 @@ public class DetalleActivity extends BaseActivity {
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
         //relleno novedades
+
         Cursor cursor = db.query("GAMES",
                 new String[] { "DESCRIPTION", "NAME", "PRICE","IMAGE_ID"},
                 "NAME='" + name + "'",
                 null,
                 null, null,null,"1");
         cursor.moveToFirst();
+
         String decripcion = cursor.getString( cursor.getColumnIndex("DESCRIPTION") );
         String nombre = cursor.getString( cursor.getColumnIndex("NAME") );
         float precio = cursor.getFloat( cursor.getColumnIndex("PRICE") );
