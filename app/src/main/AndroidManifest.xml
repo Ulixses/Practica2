@@ -24,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Practica2">
-        <activity android:name=".FinalizarCompraActivity"></activity>
+        <activity android:name=".TabActivity"/>
+        <activity android:name=".FinalizarCompraActivity" />
         <activity android:name=".DetalleActivity" />
         <activity android:name=".ReclamacionActivity" />
         <activity android:name=".ConsultaActivity" />
@@ -37,10 +38,6 @@
         <activity android:name=".CarroActivity" />
         <activity android:name=".DondeActivity" />
         <activity android:name=".ContactoActivity" />
-        <activity android:name=".OfertasActivity" />
-        <activity android:name=".NovedadesActivity" />
-        <activity android:name=".PS4Activity" />
-        <activity android:name=".XBoxActivity" />
         <activity
             android:name=".MainActivity"
             android:label="UliGra Shop">

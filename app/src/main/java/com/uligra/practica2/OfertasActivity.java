@@ -6,22 +6,28 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
+import androidx.fragment.app.Fragment;
 
-public class
-OfertasActivity extends BaseActivity {
+public class OfertasActivity extends Fragment {
+
+    public OfertasActivity(){
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_ofertas, frameLayout);
-        ListView ofertas = findViewById(R.id.ofertaslist);
-        SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
+        View view = inflater.inflate(R.layout.activity_ofertas, container, false);
+        ListView ofertas = view.findViewById(R.id.ofertaslist);
+        SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
         Cursor cursor = db.query("GAMES",
                 new String[] {"_id", "DEAL", "NAME", "PRICE"},
@@ -29,31 +35,10 @@ OfertasActivity extends BaseActivity {
                 null,
                 null, null, null);
         GameCursorAdapter listAdapter = new GameCursorAdapter(
-                this,
+                getContext(),
                 R.layout.game_item,
                 cursor,0);
         ofertas.setAdapter(listAdapter);
-
-    }
-    public void aniadirJuegoACarrito(View view) {
-        LinearLayout parent = (LinearLayout) view.getParent();
-        String name = ((TextView)parent.findViewById(R.id.Nombre)).getText().toString();
-        SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
-        SQLiteDatabase db = gameDbHelper.getReadableDatabase();
-        try{
-            //db.update("GAMES", cv, "NAME = "+ name, null);
-            db.execSQL("UPDATE GAMES SET CART = 1 WHERE NAME = '"+ name + "';");
-        }
-        catch (Exception e){
-            String error =  e.getMessage().toString();
-            Log.e(error, error);
-        }
-    }
-    public void clickGame(View view) {
-        Intent intent = new Intent(this, DetalleActivity.class);
-        LinearLayout parent = (LinearLayout) view.getParent();
-        String name = ((TextView)parent.findViewById(R.id.Nombre)).getText().toString();
-        intent.putExtra("NAME", name);
-        startActivity(intent);
+        return view;
     }
 }

@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -85,19 +86,23 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.navigation_ofer :
-                intent = new Intent(this, OfertasActivity.class);
+                intent = new Intent(this, TabActivity.class);
+                intent.putExtra("TAB",3);
                 startActivity(intent);
                 break;
             case R.id.navigation_ps4 :
-                intent = new Intent(this, PS4Activity.class);
+                intent = new Intent(this, TabActivity.class);
+                intent.putExtra("TAB",1);
                 startActivity(intent);
                 break;
             case R.id.navigation_xbox :
-                intent = new Intent(this, XBoxActivity.class);
+                intent = new Intent(this, TabActivity.class);
+                intent.putExtra("TAB",2);
                 startActivity(intent);
                 break;
             case R.id.navigation_new :
-                intent = new Intent(this, NovedadesActivity.class);
+                intent = new Intent(this, TabActivity.class);
+                intent.putExtra("TAB",0);
                 startActivity(intent);
                 break;
             case R.id.navigation_shop :
@@ -123,7 +128,14 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         Intent intent = new Intent(this, DetalleActivity.class);
         String name = ((TextView)view.findViewById(R.id.Nombre)).getText().toString();
+        intent.putExtra("NAME", name);
+        startActivity(intent);
+    }
 
+    public void clickGamePrice(View view) {
+        Intent intent = new Intent(this, DetalleActivity.class);
+        LinearLayout parent = (LinearLayout) view.getParent();
+        String name = ((TextView)parent.findViewById(R.id.Nombre)).getText().toString();
         intent.putExtra("NAME", name);
         startActivity(intent);
     }
