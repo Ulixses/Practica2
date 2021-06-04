@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
+import java.util.zip.Inflater;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -22,10 +25,10 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_main, frameLayout);
-        ListView novedades = findViewById(R.id.novedades);
-        ListView ofertas = findViewById(R.id.ofertas);
-        ListView ps5 = findViewById(R.id.ps4);
-        ListView xbox = findViewById(R.id.xbox);
+        LinearLayout novedades = findViewById(R.id.novedades);
+        LinearLayout ofertas = findViewById(R.id.ofertas);
+        LinearLayout ps5 = findViewById(R.id.ps4);
+        LinearLayout xbox = findViewById(R.id.xbox);
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
         //relleno novedades
@@ -34,48 +37,71 @@ public class MainActivity extends BaseActivity {
                 null,
                 null,
                 null, null, "DATE", "5");
-        GameMainCursorAdapter listAdapter = new GameMainCursorAdapter(
-                this,
-                R.layout.spinner_item,
-                cursor,0);
-        novedades.setAdapter(listAdapter);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View inflate = inflater.inflate(R.layout.spinner_item, null);
+            TextView nombre = (TextView)  inflate.findViewById(R.id.Nombre);
+            nombre.setText( cursor.getString(cursor.getColumnIndex("NAME")));
+            TextView precio = (TextView)  inflate.findViewById(R.id.Precio);
+            precio.setText( String.valueOf(cursor.getInt(cursor.getColumnIndex("PRICE")))+"€");
+            novedades.addView(inflate);
+            cursor.moveToNext();
+        }
         //relleno ofertas
         cursor = db.query("GAMES",
                 new String[] {"_id", "DEAL", "NAME", "PRICE"},
                 "DEAL = 1",
                 null,
                 null, null, null, "5");
-        listAdapter = new GameMainCursorAdapter(
-                this,
-                R.layout.spinner_item,
-                cursor,0);
-        ofertas.setAdapter(listAdapter);
-        //relleno ps5
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View inflate = inflater.inflate(R.layout.spinner_item, null);
+            TextView nombre = (TextView)  inflate.findViewById(R.id.Nombre);
+            nombre.setText( cursor.getString(cursor.getColumnIndex("NAME")));
+            TextView precio = (TextView)  inflate.findViewById(R.id.Precio);
+            precio.setText( String.valueOf(cursor.getInt(cursor.getColumnIndex("PRICE")))+"€");
+            ofertas.addView(inflate);
+            cursor.moveToNext();
+        }
         cursor = db.query("GAMES",
                 new String[] {"_id", "COMPANY", "NAME", "PRICE"},
                 "COMPANY = 'PS5'",
                 null,
                 null, null, "date(DATE)", "5");
-        listAdapter = new GameMainCursorAdapter(
-                this,
-                R.layout.spinner_item,
-                cursor,0);
-        ps5.setAdapter(listAdapter);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View inflate = inflater.inflate(R.layout.spinner_item, null);
+            TextView nombre = (TextView)  inflate.findViewById(R.id.Nombre);
+            nombre.setText( cursor.getString(cursor.getColumnIndex("NAME")));
+            TextView precio = (TextView)  inflate.findViewById(R.id.Precio);
+            precio.setText( String.valueOf(cursor.getInt(cursor.getColumnIndex("PRICE")))+"€");
+            ps5.addView(inflate);
+            cursor.moveToNext();
+        }
         //relleno xbox
         cursor = db.query("GAMES",
                 new String[] {"_id", "COMPANY", "NAME", "PRICE"},
                 "COMPANY = 'XBOX'",
                 null,
                 null, null, "DATE","5");
-        listAdapter = new GameMainCursorAdapter(
-                this,
-                R.layout.spinner_item,
-                cursor,0);
-        xbox.setAdapter(listAdapter);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View inflate = inflater.inflate(R.layout.spinner_item, null);
+            TextView nombre = (TextView)  inflate.findViewById(R.id.Nombre);
+            nombre.setText( cursor.getString(cursor.getColumnIndex("NAME")));
+            TextView precio = (TextView)  inflate.findViewById(R.id.Precio);
+            precio.setText( String.valueOf(cursor.getInt(cursor.getColumnIndex("PRICE")))+"€");
+            xbox.addView(inflate);
+            cursor.moveToNext();
+        }
     }
 
     public void clickNovedades(View view) {
-        ListView novedades = findViewById(R.id.novedades);
+        LinearLayout novedades = findViewById(R.id.novedades);
         if(novedades.getVisibility() == View.GONE) {
             novedades.setVisibility(View.VISIBLE);
         }else{
@@ -84,7 +110,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void clickOfertas(View view) {
-        ListView ofertas = findViewById(R.id.ofertas);
+        LinearLayout ofertas = findViewById(R.id.ofertas);
         if(ofertas.getVisibility() == View.GONE) {
             ofertas.setVisibility(View.VISIBLE);
         }else{
@@ -93,7 +119,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void clickPs4(View view) {
-        ListView ps5 = findViewById(R.id.ps4);
+        LinearLayout ps5 = findViewById(R.id.ps4);
         if(ps5.getVisibility() == View.GONE) {
             ps5.setVisibility(View.VISIBLE);
         }else{
@@ -102,7 +128,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void clickXbox(View view) {
-        ListView xbox = findViewById(R.id.xbox);
+        LinearLayout xbox = findViewById(R.id.xbox);
         if(xbox.getVisibility() == View.GONE) {
             xbox.setVisibility(View.VISIBLE);
         }else{
