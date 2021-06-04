@@ -27,7 +27,7 @@ public class NovedadesActivity extends BaseActivity {
                 new String[] {"_id", "Cast( DATE as date ) as date_", "NAME", "PRICE"},
                 null,
                 null,
-                null, null, "date_");
+                null, null, "date_","6");
         GameCursorAdapter listAdapter = new GameCursorAdapter(
                 this,
                 R.layout.game_item,
