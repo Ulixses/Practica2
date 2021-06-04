@@ -122,7 +122,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     public void clickGame(View view) {
 
         Intent intent = new Intent(this, DetalleActivity.class);
-        String name = ((TextView)view.findViewById(R.id.textView2)).getText().toString();
+        String name = ((TextView)view.findViewById(R.id.Nombre)).getText().toString();
 
         intent.putExtra("NAME", name);
         startActivity(intent);

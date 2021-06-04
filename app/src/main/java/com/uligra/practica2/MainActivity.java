@@ -34,12 +34,10 @@ public class MainActivity extends BaseActivity {
                 null,
                 null,
                 null, null, "DATE", "5");
-        SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
+        GameMainCursorAdapter listAdapter = new GameMainCursorAdapter(
                 this,
                 R.layout.spinner_item,
-                cursor,
-                new String[]{"NAME","PRICE"},
-                new int[] {R.id.textView2,R.id.textView});
+                cursor,0);
         novedades.setAdapter(listAdapter);
         //relleno ofertas
         cursor = db.query("GAMES",
@@ -47,12 +45,10 @@ public class MainActivity extends BaseActivity {
                 "DEAL = 1",
                 null,
                 null, null, null, "5");
-        listAdapter = new SimpleCursorAdapter(
+        listAdapter = new GameMainCursorAdapter(
                 this,
                 R.layout.spinner_item,
-                cursor,
-                new String[]{"NAME","PRICE"},
-                new int[] {R.id.textView2,R.id.textView});
+                cursor,0);
         ofertas.setAdapter(listAdapter);
         //relleno ps5
         cursor = db.query("GAMES",
@@ -60,12 +56,10 @@ public class MainActivity extends BaseActivity {
                 "COMPANY = 'PS5'",
                 null,
                 null, null, "date(DATE)", "5");
-        listAdapter = new SimpleCursorAdapter(
+        listAdapter = new GameMainCursorAdapter(
                 this,
                 R.layout.spinner_item,
-                cursor,
-                new String[]{"NAME","PRICE"},
-                new int[] {R.id.textView2,R.id.textView});
+                cursor,0);
         ps5.setAdapter(listAdapter);
         //relleno xbox
         cursor = db.query("GAMES",
@@ -73,12 +67,10 @@ public class MainActivity extends BaseActivity {
                 "COMPANY = 'XBOX'",
                 null,
                 null, null, "DATE","5");
-        listAdapter = new SimpleCursorAdapter(
+        listAdapter = new GameMainCursorAdapter(
                 this,
                 R.layout.spinner_item,
-                cursor,
-                new String[]{"NAME","PRICE"},
-                new int[] {R.id.textView2,R.id.textView});
+                cursor,0);
         xbox.setAdapter(listAdapter);
     }
 

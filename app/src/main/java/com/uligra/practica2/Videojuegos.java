@@ -17,6 +17,7 @@ public class Videojuegos {
     public String fecha;
     public int oferta;
     public int img;
+    public int cesta;
     public Videojuegos(String titulo, String descripcion, Consola plataforma, Double precio, String fecha, int oferta, int img){
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -25,6 +26,7 @@ public class Videojuegos {
         this.fecha = fecha;
         this.oferta = oferta;
         this.img = img;
+        this.cesta = 0;
     }
     static public ArrayList<Videojuegos> videjuegos = new ArrayList<Videojuegos>();
 }

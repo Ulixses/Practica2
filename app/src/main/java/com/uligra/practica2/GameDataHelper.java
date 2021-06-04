@@ -4,12 +4,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 public class GameDataHelper extends SQLiteOpenHelper {
-    private static final String DBNAME = "gamesdatabase";
+    private static final String DBNAME = "gamesdatabase2";
     private static final int DBVERSION = 1;
 
 
@@ -27,7 +28,8 @@ public class GameDataHelper extends SQLiteOpenHelper {
                 + "DEAL INTEGER,"
                 + "IMAGE_ID INTEGER, "
                 + "PRICE REAL,"
-                + "DATE TEXT); ");
+                + "DATE TEXT,"
+                + "CART INTEGER); ");
         Videojuegos v = new Videojuegos("TLOU2", "Juego de zombies mazo guapo", Videojuegos.Consola.PS5, 10.5, new String("10-2-2020"), 0, R.drawable.tlou);
         addVideogame(db,v);
          v = new Videojuegos("UNCHARTED", "Juego de aventuras mazo guapo", Videojuegos.Consola.PS5, 20.0, new String("11-2-2020"), 1, R.drawable.uncharted);
@@ -44,6 +46,7 @@ public class GameDataHelper extends SQLiteOpenHelper {
         addVideogame(db,v);
         v = new Videojuegos("TETE", "Juego de TETE mazo guapo", Videojuegos.Consola.PS5, 60.0, new String("9-2-2020"), 0, R.drawable.uluses);
         addVideogame(db,v);
+        Log.i("OpenHelper::onCreate()", "Exit");
     }
 
 
@@ -58,6 +61,7 @@ public class GameDataHelper extends SQLiteOpenHelper {
         gamesData.put("IMAGE_ID", v.img);
         gamesData.put("PRICE", v.precio);
         gamesData.put("DATE", v.fecha);
+        gamesData.put("CART", v.cesta);
         db.insert("GAMES", null, gamesData);
     }
 

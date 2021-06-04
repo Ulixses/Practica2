@@ -1,10 +1,15 @@
 package com.uligra.practica2;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class DetalleActivity extends BaseActivity {
@@ -45,4 +50,20 @@ public class DetalleActivity extends BaseActivity {
         imageV.setImageDrawable(getResources().getDrawable(image_id));
     }
 
+    public void aniadirJuegoACarrito(View view) {
+        FrameLayout parent = (FrameLayout) view.getParent();
+        String name = ((TextView)parent.findViewById(R.id.titulo)).getText().toString();
+        SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
+        SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+        try{
+            //db.update("GAMES", cv, "NAME = "+ name, null);
+            db.execSQL("UPDATE GAMES SET CART = 1 WHERE NAME = '"+ name + "';");
+        }
+        catch (Exception e){
+            String error =  e.getMessage().toString();
+            Log.e(error, error);
+        }
+        Intent intent = new Intent(this, CarroActivity.class);
+        startActivity(intent);
+    }
 }

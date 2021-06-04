@@ -65,5 +65,6 @@
         android:clickable="true"
         android:focusable="true"
         android:padding="40dp"
-        app:srcCompat="@drawable/baseline_shopping_cart_black_48" />
+        app:srcCompat="@drawable/baseline_shopping_cart_black_48"
+        android:onClick="aniadirJuegoACarrito"/>
 </FrameLayout>
