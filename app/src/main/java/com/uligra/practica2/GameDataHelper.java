@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 public class GameDataHelper extends SQLiteOpenHelper {
-    private static final String DBNAME = "gamesdatabase2";
+    private static final String DBNAME = "gamesdatabase3";
     private static final int DBVERSION = 1;
 
 

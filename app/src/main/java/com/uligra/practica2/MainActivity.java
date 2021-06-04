@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
                 new String[] {"_id", "Cast( DATE as date ) as date_", "NAME", "PRICE"},
                 null,
                 null,
-                null, null, "DATE", "5");
+                null, null, "DATE", "3");
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             LayoutInflater inflater = LayoutInflater.from(this);
@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
                 new String[] {"_id", "DEAL", "NAME", "PRICE"},
                 "DEAL = 1",
                 null,
-                null, null, null, "5");
+                null, null, null, "3");
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             LayoutInflater inflater = LayoutInflater.from(this);
@@ -69,7 +69,7 @@ public class MainActivity extends BaseActivity {
                 new String[] {"_id", "COMPANY", "NAME", "PRICE"},
                 "COMPANY = 'PS5'",
                 null,
-                null, null, "date(DATE)", "5");
+                null, null, "date(DATE)", "3");
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             LayoutInflater inflater = LayoutInflater.from(this);
@@ -86,7 +86,7 @@ public class MainActivity extends BaseActivity {
                 new String[] {"_id", "COMPANY", "NAME", "PRICE"},
                 "COMPANY = 'XBOX'",
                 null,
-                null, null, "DATE","5");
+                null, null, "DATE","3");
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             LayoutInflater inflater = LayoutInflater.from(this);
