@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="36dp"
+    android:paddingHorizontal="36dp"
+    android:paddingVertical="10dp"
     tools:context=".FinalizarCompraActivity">
 
     <TextView
@@ -23,7 +24,7 @@
         android:id="@+id/nombre"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="?colorPrimaryDark"
         android:hint="Nombre"
         android:inputType="textPersonName" />
@@ -32,8 +33,7 @@
         android:id="@+id/correo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="?colorPrimaryDark"
         android:hint="Email"
         android:inputType="textEmailAddress" />
@@ -43,21 +43,55 @@
         android:id="@+id/direccion"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="?colorPrimaryDark"
         android:hint="Dirección"
-        android:inputType="numberDecimal" />
+        android:inputType="textPostalAddress" />
 
     <EditText
         android:id="@+id/telefono"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="?colorPrimaryDark"
         android:hint="Telefono"
-        android:inputType="numberDecimal" />
+        android:inputType="phone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Método de pago:"
+            android:textSize="28sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:checkedButton="@+id/radio_button_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/mastercard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:paddingVertical="14dp"
+                android:text="Visa" />
+
+            <RadioButton
+                android:id="@+id/visa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checked="false"
+                android:paddingVertical="14dp"
+                android:text="Mastercard" />
+        </RadioGroup>
+    </LinearLayout>
 
 
     <Button
@@ -68,7 +102,7 @@
         android:text="Comprar"
         android:padding="10dp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="15dp"
         android:onClick="comprar"/>
 
 

@@ -92,7 +92,7 @@ public class CarroActivity extends BaseActivity {
             p = p + cursor.getInt(cursor.getColumnIndex("PRICE"));
             cursor.moveToNext();
         }
-        precio.setText("Precio: "+ String.valueOf(p)+"€");
+        precio.setText("Precio: "+ p +"€");
     }
     public void clickGame(View view) {
         Intent intent = new Intent(this, DetalleActivity.class);
